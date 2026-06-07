@@ -1,0 +1,25 @@
+Decision Tree Rules
+This model classifies customers based on points, activity, membership duration, and age.
+
+|--- Points <= 6725.00
+|   |--- Points <= 723.00
+|   |   |--- Points <= 1.00
+|   |   |   |--- class: Inactive
+|   |   |--- Points >  1.00
+|   |   |   |--- class: Least Loyal
+|   |--- Points >  723.00
+|   |   |--- Log_Points <= 7.74
+|   |   |   |--- class: Potential
+|   |   |--- Log_Points >  7.74
+|   |   |   |--- class: Potential
+|--- Points >  6725.00
+|   |--- Log_Points <= 10.55
+|   |   |--- Log_Points <= 9.65
+|   |   |   |--- class: Active
+|   |   |--- Log_Points >  9.65
+|   |   |   |--- class: Highly Active
+|   |--- Log_Points >  10.55
+|   |   |--- Membership_Days <= 82.00
+|   |   |   |--- class: Most Loyal
+|   |   |--- Membership_Days >  82.00
+|   |   |   |--- class: Most Loyal
